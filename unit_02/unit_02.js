@@ -46,7 +46,8 @@ function t8() {
   // value всегда получаем внутри функции
   let data = document.querySelector(".i-8").value; // получили значение
   // тут выводим
-  let out = (document.querySelector(".out-8").textContent = data);
+  //   prettier-ignore
+  let out = document.querySelector(".out-8").textContent = data;
 }
 
 document.querySelector(".b-8").onclick = t8;
@@ -70,43 +71,69 @@ let out2 = document.querySelector("div.out-10");
 
 function t10() {
   let a = input2.value;
-  out2.textContent = a * 2; // + перед а не нужен т.к. при умножении операнды превращаються в числа
+  out2.textContent = a * 20; // + перед а не нужен т.к. при умножении операнды превращаються в числа
+  input2.value = "";
 }
 
 document.querySelector(".b-10").onclick = t10;
 
 // Task 11.
 // По нажатию на кнопку .b-11 выполняется функция t11, которая выводит на страницу в .out-11 число, которое ввел пользователь в i-11 и к нему добавленное число 55. В этой задаче мы не приводим к числу полученное из input.
-
-function t11() {}
+let input3 = document.querySelector(".i-11");
+let out3 = document.querySelector(".out-11");
+function t11() {
+  let i = input3.value;
+  console.log(i);
+  out3.textContent = i + 55;
+}
 
 document.querySelector(".b-11").onclick = t11;
 
 // Task 12.
 // По нажатию на кнопку выполняется функция t12. Функция должна получить данные из input i.12-1 и i.12-2 (пользователь вводин в них фамилию и имя). После чего вывести в .out-12  строку 'Hello имя фамилия', где имя - имя пользователя и фамилия - введенная фамилия. Обращаю ваше внимание - с этого момента мы работаем строго по заданию. Hello - с большой буквы. Между Hello имя один пробел (вы же включили отображение пробелов?). Вы не добавляете "от себя" - запятые, любые другие слова и символы. Аналогичные правила действуют и дальше по курсу.
-
-function t12() {}
+let firstName = document.querySelector(".i-12-1");
+let lastName = document.querySelector(".i-12-2");
+let out4 = document.querySelector(".out-12");
+function t12() {
+  let a = firstName.value;
+  let b = lastName.value;
+  out4.textContent = "Hello " + a + " " + b;
+}
 
 document.querySelector(".b-12").onclick = t12;
 
 // Task 13.
 // При нажатии кнопки .b-13 выполняется t13. Функция получает из input.i-13-1 и .i-13-2 числа в переменные a, b. После чего в .out-13 выводит их сумму. Преобразовывайте a, b в числа!!!!
-
-function t13() {}
+let firstNum = document.querySelector(".i-13-1");
+let secondNum = document.querySelector(".i-13-2");
+let out5 = document.querySelector(".out-13");
+function t13() {
+  let a = +firstNum.value;
+  let b = +secondNum.value;
+  out5.innerHTML = a + b;
+}
 
 document.querySelector(".b-13").onclick = t13;
 
 // Task 14.
 // По нажатию кнопки .b-14 выполняется функция t14. Она заменяет значение value в input.i-14 на строку 'Go';
+let input4 = document.querySelector("input.i-14");
 
-function t14() {}
+function t14() {
+  let a = input4.value;
+  let b = "Go";
+  input4.value = b;
+}
 
 document.querySelector(".b-14").onclick = t14;
 
 // Task 15.
 //  По нажатию кнопки .b-15 выполняется функция t15. Она присваивает .i-15 свойство style.border = "4px solid red";
-
-function t15() {}
+let input5 = document.querySelector("input.i-15");
+function t15() {
+  // prettier-ignore
+  return input5.style.border = "4px solid red";
+}
 
 document.querySelector(".b-15").onclick = t15;
 
