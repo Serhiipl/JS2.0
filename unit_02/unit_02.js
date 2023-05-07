@@ -176,8 +176,14 @@ document.querySelector(".b-18").onclick = t18;
 
 // Task 19.
 // По нажатию кнопки .b-19 функция t19 дожна в out-19 вывести сумму двух отрицательных чисел из input .i-19-1 и .i-19-2.
-
-function t19() {}
+let firstInput19 = document.querySelector(".i-19-1");
+let secondInput19 = document.querySelector(".i-19-2");
+let out19 = document.querySelector(".out-19");
+function t19() {
+  let a = +firstInput19.value;
+  let b = +secondInput19.value;
+  out19.innerHTML = a + b;
+}
 
 document.querySelector(".b-19").onclick = t19;
 
@@ -188,7 +194,7 @@ let count = 0;
 
 function t20() {
   count = count + 1; // можно сократить count++
-  // тут допишите вывод в out-20
+  document.querySelector(".out-20").innerHTML = count;
 }
 
 document.querySelector(".b-20").onclick = t20;
