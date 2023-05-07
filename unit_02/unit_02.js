@@ -139,8 +139,15 @@ document.querySelector(".b-15").onclick = t15;
 
 // Task 16.
 //По нажатию на кнопку .b-16 выполняется функция t16. Функция получает из .i-16-1 и i-16-2 числа. Выведите в .out-16 сумму данных чисел по нажатию кнопки b-16. Не переводите полученное из input в число!!!!
-
-function t16() {}
+let firstInput16 = document.querySelector(".i-16-1");
+let secondInput16 = document.querySelector(".i-16-2");
+let out16 = document.querySelector(".out-16");
+console.log(out16);
+function t16() {
+  let a = firstInput16.value;
+  let b = secondInput16.value;
+  out16.innerText = a + b;
+}
 
 document.querySelector(".b-16").onclick = t16;
 
@@ -158,8 +165,12 @@ document.querySelector(".b-17").onclick = t17;
 
 // Task 18.
 //  По нажатию на кнопку .b-18 выполняется функция t18. Функция получает из .i-18 число в переменную a. Выводит в out-18 результат операции parseFloat(a). Попробуйте ввести значения 5, 33.02, 33.9a, -20.01
-
-function t18() {}
+let out18 = document.querySelector(".out-18");
+let input18 = document.querySelector(".i-18");
+function t18() {
+  let a = input18.value;
+  out18.innerHTML = parseFloat(a);
+}
 
 document.querySelector(".b-18").onclick = t18;
 
