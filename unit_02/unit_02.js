@@ -11,51 +11,67 @@ document.querySelector(".out-2").textContent = c / d;
 
 // Task 3.
 // Создайте две переменные e = 3 и f = 5. Выведите на страницу  в .out-3 результат сложения e + f.
-
-// document.querySelector('.out-3').textContent =
+let e = 3;
+let f = 5;
+document.querySelector(".out-3").textContent = e + f;
 
 // Task 4.
 // Создайте две переменные e1 = '3' и f1 = 5. Выведите на страницу  в .out-4 результат сложения e1 + f1. Объясните разницу.
-
-// document.querySelector('.out-4').textContent =
+let e1 = "3"; //строка
+let f1 = 5; //число
+document.querySelector(".out-4").textContent = e1 + f1; // конкатенация сложение строки и числа(превращаеться в строку)
 
 // Task 5.
 // Создайте две переменные e2 = 3 и f2 = 0. Выведите на страницу  в .out-5 результат деления e2 на f2.
-
-// document.querySelector('.out-5').textContent =
+let e2 = 3;
+let f2 = 0;
+document.querySelector(".out-5").textContent = e2 / f2;
 
 // Task 6.
 // Создайте две переменные e3 = 3 и f3 = 'Hello'. Выведите на страницу  в .out-6 результат сложения двух переменных.
-
-// document.querySelector('.out-6').textContent =
+let e3 = 3;
+let f3 = "Hello";
+document.querySelector(".out-6").textContent = e3 + f3;
 
 // Task 7.
 // Создайте две переменные e4 = 3 и f4 = 'Hello'. Выведите на страницу  в .out-7 результат умножения двух переменных.
-
-// document.querySelector('.out-7').textContent =
+let e4 = 3;
+let f4 = "Hello";
+document.querySelector(".out-7").textContent = e4 * f4;
 
 // Task 8.
 // По нажатию на кнопку .b-8 выполняется функция, которая выводит в div.out-8 то, что пользователь ввел в input.i-8.
 
 function t8() {
   // value всегда получаем внутри функции
-  // let data = document.querySelector('.i-8').value; // получили значение
+  let data = document.querySelector(".i-8").value; // получили значение
   // тут выводим
+  let out = (document.querySelector(".out-8").textContent = data);
 }
 
 document.querySelector(".b-8").onclick = t8;
 
 // Task 9.
 // По нажатию на кнопку .b-9 выполняется функция t9, которая выводит в div.out-9 то, что пользователь ввел в input.i-9. Добавьте очистку input после нажатия кнопки.
-
-function t9() {}
+let input = document.querySelector(".i-9");
+let out = document.querySelector(".out-9");
+function t9() {
+  let i = input.value;
+  out.textContent = +i;
+  input.value = "";
+}
 
 document.querySelector(".b-9").onclick = t9;
 
 // Task 10.
 // По нажатию на кнопку .b-10 выполняется функция t10, которая выводит в div.out-10 то, что пользователь ввел в input.i-10 умноженное на 20.
+let input2 = document.querySelector(".i-10");
+let out2 = document.querySelector("div.out-10");
 
-function t10() {}
+function t10() {
+  let a = input2.value;
+  out2.textContent = a * 2; // + перед а не нужен т.к. при умножении операнды превращаються в числа
+}
 
 document.querySelector(".b-10").onclick = t10;
 
