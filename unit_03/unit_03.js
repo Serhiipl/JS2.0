@@ -18,8 +18,14 @@ document.querySelector(".b-1").onclick = f1;
 
 let a21 = 45;
 let a22 = 32;
-
-function f2() {}
+let out2 = document.querySelector(".out-2");
+function f2() {
+  if (a21 > a22) {
+    out2.textContent = a21;
+  } else if (a21 < a22) {
+    out2.textContent = a22;
+  }
+}
 
 document.querySelector(".b-2").onclick = f2;
 
