@@ -33,21 +33,51 @@ document.querySelector(".b-2").onclick = f2;
 // Даны 2 input - .i-31 и .i-32, оба - input[type=number]. При нажатии кнопки .b-3 срабатывает функция f3. Функция должна сравнить числа из input, вывести в  .out-3 большее число.
 // Проведите самостоятельный тест работы, введите пары чисел 4 и 9, 9 и 22, 5 и 111.
 
-function f3() {}
+function f3() {
+  let input1 = +document.querySelector(".i-31").value;
+  let input2 = +document.querySelector(".i-32").value;
+  let out3 = document.querySelector(".out-3");
+
+  if (input1 > input2) {
+    out3.innerHTML = input1;
+  } else if (input1 < input2) {
+    out3.textContent = input2;
+  }
+}
 
 document.querySelector(".b-3").onclick = f3;
 
 // Task 4.
 // Пользователь вводит в .i-4 год своего рождения. Есть кнопка .b-4 которая запускает функцию f4. Функция должна вывести в .out-4 число 1 если пользователю больше или равно 18 лет, и 0 если меньше.
+let year = 2023;
 
-function f4() {}
+function f4() {
+  let input = +document.querySelector(".i-4").value;
+  let out4 = document.querySelector(".out-4");
+
+  if (year - input >= 18) {
+    out4.innerHTML = 1;
+  } else {
+    out4.innerHTML = 0;
+  }
+}
 
 document.querySelector(".b-4").onclick = f4;
-
 // Task 5.
 // На странице есть input c классом i-5, куда пользователь может ввести число. Есть кнопка b-5 которая запускает функцию f5. Функция должна вывести в .out-5 символ 'm' если число меньше нуля, 0 если число равно нулю и число 1 если больше.
+let out5 = document.querySelector(".out-5");
 
-function f5() {}
+function f5() {
+  let input = +document.querySelector(".i-5").value;
+  console.log(typeof input);
+  if (input > 0) {
+    out5.innerHTML = 1;
+  } else if (input == 0) {
+    out5.innerHTML = 0;
+  } else {
+    out5.innerHTML = "m";
+  }
+}
 
 document.querySelector(".b-5").onclick = f5;
 
