@@ -152,21 +152,32 @@ document.querySelector(".b-12").onclick = f12;
 // Task 13
 //  При изменении положения ползунка .i-13 выводите его значение в out-13. Обратите внимание на событие.
 
-function f13() {}
+function f13() {
+  document.querySelector(".out-13").innerHTML =
+    document.querySelector(".i-13").value;
+}
 
 document.querySelector(".i-13").oninput = f13;
 
 // Task 14
 // При нажатии на кнопку выводите текст из textarea .t-14 в .out-14.
 
-function f14() {}
+function f14() {
+  let textarea = document.querySelector(".t-14").value;
+  //   prettier-ignore
+  let out = document.querySelector(".out-14").innerHTML = textarea;
+}
 
 document.querySelector(".b-14").onclick = f14;
 
 // Task 15
 // При нажатии кнопки .b-15 функция должна выводить текст из .i-15 в textarea .t-15 и в .out-15.
 
-function f15() {}
+function f15() {
+  let input = document.querySelector(".i-15").value;
+  document.querySelector(".t-15").innerHTML = input;
+  document.querySelector(".out-15").innerHTML = input;
+}
 
 document.querySelector(".b-15").onclick = f15;
 
@@ -175,6 +186,8 @@ document.querySelector(".b-15").onclick = f15;
 
 function f16() {
   // для получения выбранного option просто получите select в переменную и select.value;
+  document.querySelector(".out-16").innerHTML =
+    document.querySelector(".s-16").value;
 }
 
 document.querySelector(".b-16").onclick = f16;
@@ -182,27 +195,39 @@ document.querySelector(".b-16").onclick = f16;
 // Task 17
 // При смене выбранного значения .s-17 выводите в .out-17 value выбранного option из .s-17.
 
-function f17() {}
+function f17() {
+  let input = document.querySelector(".s-17").value;
+  document.querySelector(".out-17").innerHTML = input;
+}
 
 document.querySelector(".s-17").onchange = f17;
 
 // Task 18
 // При смене выбранного значения в s-18, получайте из него value выбранного option и присвойте данный value в input .i-18.
-
-function f18() {}
+let inp = document.querySelector(".i-18");
+function f18() {
+  let sel = document.querySelector(".s-18").value;
+  inp.innerHTML = sel;
+}
 
 document.querySelector(".s-18").onchange = f18;
 
 // Task 19
 // На странице создан div.out-19. По нажатию кнопки, получите из него текст и присвойте в value элемента .i-19.
 
-function f19() {}
+function f19() {
+  let out19 = document.querySelector(".out-19").textContent;
+  document.querySelector(".i-19").value = out19;
+}
 
 document.querySelector(".b-19").onclick = f19;
 
 // Task 20
 // У вас есть два select. Напишите код, который при изменении select .s-201 будет аналогично изменять выбранный option в .s-202.
 
-function f20() {}
+function f20() {
+  document.querySelector(".s-202").value =
+    document.querySelector(".s-201").value;
+}
 
 document.querySelector(".s-201").onchange = f20;
