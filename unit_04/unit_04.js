@@ -87,11 +87,13 @@ document.querySelector(".b-7").onclick = f7;
 // Task 8.
 // При нажатии кнопки .b-8 запускается функция f8. Функция с помощью innerHTML создает в .out-8 новый div с классом js2 и текстом new div. Нажали несколько раз? Создаем несколько раз!
 let output8 = document.querySelector(".out-8");
-let div;
+// let div;
 function f8() {
-  div = output8.appendChild(document.createElement("div"));
-  div.classList.add("js2");
-  div.textContent = "new div";
+  output8.innerHTML = "<div class='js2'>new div</div>";
+
+  //   div = output8.appendChild(document.createElement("div"));
+  //   div.classList.add("js2");
+  //   div.textContent = "new div";
 }
 
 document.querySelector(".b-8").onclick = f8;
@@ -99,28 +101,51 @@ document.querySelector(".b-8").onclick = f8;
 // Task 9
 // При нажатии кнопки .b-9 запускаем функцию f9. Функция проверяет checked элемента .r-9. Если элемент выбран (checked) то выводит в .out-9 value radiobutton. Если не выбран - выводит false.
 
-function f9() {}
+function f9() {
+  let rb = document.querySelector(".r-9");
+  let out9 = document.querySelector(".out-9");
+  switch (rb.checked) {
+    case true:
+      out9.innerHTML = rb.value;
+      break;
+    case false:
+      out9.innerHTML = false;
+      break;
+    default:
+      break;
+  }
+}
 
 document.querySelector(".b-9").onclick = f9;
 
 // Task 10
 // При нажатии кнопки .b-10 запускаем функцию f10. Функция получает из .i-10 значение цвета и окрашивает style.background элемента .out-10 в этот цвет.
 
-function f10() {}
+function f10() {
+  let color = document.querySelector(".i-10").value;
+  let bgcolor = document.querySelector(".out-10");
+  bgcolor.style.background = color;
+}
 
 document.querySelector(".b-10").onclick = f10;
 
 // Task 11
 // При нажатии кнопки .b-11 запускается функция f11. Функция получает цвет из .i-111 и присваивает как value элементу .i-112. Т.е. после нажатия кнопки выбранный цвета в первом и втором input станут одинаковые.
 
-function f11() {}
+function f11() {
+  document.querySelector(".i-112").value =
+    document.querySelector(".i-111").value;
+}
 
 document.querySelector(".b-11").onclick = f11;
 
 // Task 12
 // При нажатии кнопки .b-12 запускается функция f12. Функция выводит дату из .i-12 в out-12.
 
-function f12() {}
+function f12() {
+  let input = document.querySelector(".i-12").value;
+  document.querySelector(".out-12").innerHTML = input;
+}
 
 document.querySelector(".b-12").onclick = f12;
 
