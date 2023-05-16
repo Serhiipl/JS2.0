@@ -109,8 +109,17 @@ document.querySelector(".b-6").onclick = t6;
 // Разделитель - знак подчеркивания. Если пользователь ввел 4 и нажал кнопку, мы получим:
 // 4_3_2_1_0_
 // Задача решается с помощью цикла.
+let input7 = document.querySelector(".i-7");
+let output7 = document.querySelector(".out-7");
 
-function t7() {}
+function t7() {
+  let inp = +input7.value;
+  let out = "";
+  for (let i = inp; i >= 0; i--) {
+    out += i + "_";
+  }
+  output7.innerHTML = out;
+}
 
 document.querySelector(".b-7").onclick = t7;
 
@@ -121,8 +130,18 @@ document.querySelector(".b-7").onclick = t7;
 // Разделитель подчеркивание. Если пользователь ввел 4 и 8  и нажал кнопку, мы получим:
 //  4_5_6_7_8_
 // Задача решается с помощью цикла.
-
-function t8() {}
+let input81 = document.querySelector(".i-81");
+let input82 = document.querySelector(".i-82");
+let output8 = document.querySelector(".out-8");
+function t8() {
+  let a = +input81.value;
+  let b = +input82.value;
+  let c = "";
+  for (let i = a; i <= b; i++) {
+    c += i + "_";
+  }
+  output8.innerHTML = c;
+}
 
 document.querySelector(".b-8").onclick = t8;
 
@@ -135,16 +154,41 @@ document.querySelector(".b-8").onclick = t8;
 // 6_7_8_
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл.
 // цикл - один
+let input91 = document.querySelector(".i-91");
+let input92 = document.querySelector(".i-92");
+let output9 = document.querySelector(".out-9");
 
-function t9() {}
+function t9() {
+  let a = +input91.value;
+  let b = +input92.value;
+  let c = "";
+  if (a < b) {
+    for (let i = a; i <= b; i++) {
+      c += i + "_";
+    }
+  } else if (a > b) {
+    for (let i = b; i <= a; i++) {
+      c += i + "_";
+    }
+  }
+  output9.innerHTML = c;
+}
 
 document.querySelector(".b-9").onclick = t9;
 
 //  Task 10
 // Кнопка .b-10 запускает функцию t10. Функция должна выводить в .out-10 четные годы от 1950 до 1970 включительно.
 // Разделитель - знак подчеркивания. Задача решается через цикл, а четность - через шаг (равный 2).
-
-function t10() {}
+let output10 = document.querySelector(".out-10");
+function t10() {
+  let a = 1950;
+  let b = 1970;
+  let c = "";
+  for (i = a; i <= b; i += 2) {
+    c += i + "_";
+  }
+  output10.innerHTML = c;
+}
 
 document.querySelector(".b-10").onclick = t10;
 
