@@ -207,7 +207,7 @@ document.querySelector(".s-17").onchange = f17;
 let inp = document.querySelector(".i-18");
 function f18() {
   let sel = document.querySelector(".s-18").value;
-  inp.innerHTML = sel;
+  inp.value = sel;
 }
 
 document.querySelector(".s-18").onchange = f18;
