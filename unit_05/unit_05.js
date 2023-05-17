@@ -199,8 +199,14 @@ document.querySelector(".b-10").onclick = t10;
 // вывести в .out-11 содержимое каждого блока. Разделитель - знак подчеркивания.
 //     В результате должно получиться так:
 //     one_3_4_two_
-
-function t11() {}
+let divs = document.querySelectorAll("div.div-11");
+function t11() {
+  let n = "";
+  for (let i = 0; i < divs.length; i++) {
+    n += divs[i].innerHTML + "_";
+  }
+  document.querySelector(".out-11").innerHTML = n;
+}
 
 document.querySelector(".b-11").onclick = t11;
 
