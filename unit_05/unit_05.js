@@ -215,15 +215,23 @@ document.querySelector(".b-11").onclick = t11;
 //     получить все div.div-12
 // перебрать их с помощью цикла. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
-
-function t12() {}
+let divCol = document.querySelectorAll(".div-12");
+function t12() {
+  for (let i = 0; i < divCol.length; i++) {
+    divCol[i].style.background = "orange";
+  }
+}
 
 document.querySelector(".b-12").onclick = t12;
 
 //  Task 13
 // С помощью цикла присвойте всем input .i-13 value равное 1 для первого, 2 для второго и 3 для третьего.
-
-function t13() {}
+let inputs = document.querySelectorAll(".i-13");
+function t13() {
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].value = i + 1;
+  }
+}
 
 document.querySelector(".b-13").onclick = t13;
 
@@ -233,7 +241,15 @@ document.querySelector(".b-13").onclick = t13;
 // перебрать их с помощью цикла. Обращение к элементу выглядит так elem[i]
 // вывести в .out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
-function t14() {}
+let rb = document.querySelectorAll(".i-14");
+let out14 = document.querySelector(".out-14");
+function t14() {
+  for (let i = 0; i < rb.length; i++) {
+    if (rb[i].checked) {
+      out14.innerHTML = rb[i].value;
+    }
+  }
+}
 
 document.querySelector(".b-14").onclick = t14;
 
@@ -241,7 +257,14 @@ document.querySelector(".b-14").onclick = t14;
 // Кнопка .b-15 запускает функцию t15  Функция должна выводить следующую последовательность в .out-15:
 // 10_0_9_1_8_2_7_3_6_4_5_5_4_6_3_7_2_8_1_9_0_10_
 // Подсказка (10 - i) + '_' + i + '_'
-
-function t15() {}
+let out15 = document.querySelector(".out-15");
+function t15() {
+  let out = "";
+  for (let i = 0; i <= 10; i++) {
+    // prettier-ignore
+    out += (10 - i) + "_" + i + "_";
+  }
+  out15.innerHTML = out;
+}
 
 document.querySelector(".b-15").onclick = t15;
