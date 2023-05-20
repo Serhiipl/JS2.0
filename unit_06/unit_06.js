@@ -90,8 +90,22 @@ document.querySelector(".b-4").onclick = t4;
 // 101010
 
 // <p>Вложенный цикл в зависимости от четного или нет k (счетчика цикла) рисует или 0 или 1. Внешний цикл - br.</p>
+let out5 = document.querySelector(".out-5");
 function t5() {
-  const test = "";
+  let out = "";
+  for (let k = 0; k < 3; k++) {
+    for (let i = 0; i < 6; i++) {
+      if (i % 2 == 0) {
+        out += 1;
+      } else {
+        out += 0;
+      }
+    }
+    out += "<br>";
+  }
+
+  out5.innerHTML = out;
+  console.log(out);
 }
 
 document.querySelector(".b-5").onclick = t5;
