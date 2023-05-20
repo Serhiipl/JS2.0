@@ -116,8 +116,21 @@ document.querySelector(".b-5").onclick = t5;
 // 10x01x
 // 10x01x
 // 10x01x
-
-function t6() {}
+const out6 = document.querySelector(".out-6");
+function t6() {
+  let out = "";
+  for (let a = 0; a < 3; a++) {
+    for (let b = 0; b < 2; b++) {
+      if (b % 2 == 0) {
+        out += `10x`;
+      } else {
+        out += `01x`;
+      }
+    }
+    out += `<br>`;
+  }
+  out6.innerHTML = out;
+}
 
 document.querySelector(".b-6").onclick = t6;
 
@@ -128,8 +141,17 @@ document.querySelector(".b-6").onclick = t6;
 // **
 // ***
 // ****
-
-function t7() {}
+const out7 = document.querySelector(".out-7");
+function t7() {
+  let out = "";
+  for (let i = 1; i <= 4; i++) {
+    for (let x = 0; x < i; x++) {
+      out += `*`;
+    }
+    out += `<br>`;
+  }
+  out7.innerHTML = out;
+}
 
 document.querySelector(".b-7").onclick = t7;
 
@@ -142,8 +164,17 @@ document.querySelector(".b-7").onclick = t7;
 // ***
 // **
 // *
-
-function t8() {}
+let out8 = document.querySelector(".out-8");
+function t8() {
+  let out = "";
+  for (let i = 0; i < 5; i++) {
+    for (let k = 5; k > i; k--) {
+      out += `*`;
+    }
+    out += `<br>`;
+  }
+  out8.innerHTML = out;
+}
 
 document.querySelector(".b-8").onclick = t8;
 
@@ -155,8 +186,18 @@ document.querySelector(".b-8").onclick = t8;
 // 1_2_3_
 // 1_2_3_4_
 // 1_2_3_4_5_
-
-function t9() {}
+let out9 = document.querySelector(".out-9");
+function t9() {
+  let out = "";
+  for (let i = 1; i <= 5; i++) {
+    for (let x = 1; x <= i; x++) {
+      out += `${x}_`;
+      console.log(out);
+    }
+    out += `<br>`;
+  }
+  out9.innerHTML = out;
+}
 
 document.querySelector(".b-9").onclick = t9;
 
