@@ -209,7 +209,16 @@ document.querySelector(".b-9").onclick = t9;
 //21_22_23_24_25_26_27_28_29_30_
 //31_32_33_34_35_36_37_38_39_40_
 //41_42_43_44_45_46_47_48_49_50_
-
-function t10() {}
+let out10 = document.querySelector(".out-10");
+function t10() {
+  let out = "";
+  for (let i = 0; i < 5; i++) {
+    for (let k = 1; k <= 9; k++) {
+      out += `${i}${k}_`;
+    }
+    out += `${(i + 1) * 10}_<br>`;
+  }
+  out10.innerHTML = out;
+}
 
 document.querySelector(".b-10").onclick = t10;
