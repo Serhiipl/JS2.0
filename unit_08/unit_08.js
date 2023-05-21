@@ -140,8 +140,19 @@ document.querySelector(".b-7").onclick = t7;
 // Разделитель знак подчеркивания. Если пользователь ввел 4 и 8  и нажал кнопку, мы получим:
 //     4_5_6_7_8_
 // Задача решается с помощью цикла  while.
-
-function t8() {}
+let out8 = document.querySelector(".out-8");
+let inp81 = document.querySelector(".i-81");
+let inp82 = document.querySelector(".i-82");
+function t8() {
+  let inp1 = inp81.value;
+  let inp2 = inp82.value;
+  let out = "";
+  while (inp1 <= inp2) {
+    out += `${inp1}_`;
+    inp1++;
+  }
+  out8.textContent = out;
+}
 
 document.querySelector(".b-8").onclick = t8;
 
