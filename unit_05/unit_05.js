@@ -22,7 +22,7 @@ document.querySelector(".b-1").onclick = t1;
 function t2() {
   let num = "";
   for (let i = 12; i < 39; i++) {
-    num += i + "_";
+    if (i % 2 == 0) num += i + "_";
   }
   document.querySelector(".out-2").innerHTML = num;
 }
@@ -49,11 +49,11 @@ document.querySelector(".b-3").onclick = t3;
 // Кнопка .b-4 запускает функцию t4. Функция должна выводить в .out-4 строку вида:
 //     77_74_71_68_65_62_59_56_53_50_47_44_41_38_35_
 // от 77 до 35 c шагом 3. Разделитель - знак подчеркивания. Задача решается с помощью цикла.
-let j = "";
+
 function t4() {
   let out = document.querySelector(".out-4");
-
-  for (let i = 77; i > 34; i = i - 3) {
+  let j = "";
+  for (let i = 77; i >= 35; i -= 3) {
     j += i + "_";
   }
   out.innerHTML = j;
