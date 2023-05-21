@@ -96,8 +96,19 @@ document.querySelector(".b-5").onclick = t5;
 // ******
 // Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек без пробелов и символ переноса строки br.
 // Количество строк (итераций, повторений) цикла  while вводит пользователь в .i-6.
+let out6 = document.querySelector(".out-6");
+let inp6 = document.querySelector(".i-6");
+function t6() {
+  let out = "";
+  let inp = inp6.value;
+  let i = 1;
 
-function t6() {}
+  while (i <= inp) {
+    out += `******<br>`;
+    i++;
+  }
+  out6.innerHTML = out;
+}
 
 document.querySelector(".b-6").onclick = t6;
 
@@ -107,8 +118,18 @@ document.querySelector(".b-6").onclick = t6;
 // Разделитель знак подчеркивания. Если пользователь ввел 4 и нажал кнопку, мы получим:
 //     4_3_2_1_0_
 // Задача решается с помощью цикла  while.
+let out7 = document.querySelector(".out-7");
+let inp7 = document.querySelector(".i-7");
+function t7() {
+  let inp = inp7.value;
+  let out = "";
 
-function t7() {}
+  while (inp >= 0) {
+    out += `${inp}_`;
+    inp--;
+  }
+  out7.textContent = out;
+}
 
 document.querySelector(".b-7").onclick = t7;
 
