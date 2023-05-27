@@ -263,8 +263,18 @@ document.querySelector(".b-13").onclick = t13;
 //     получить все input.i-14
 // перебрать их с помощью цикла  while. Обращение к элементу выглядит так elem[i]
 // вывести в .out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
-
-function t14() {}
+let inp14 = document.querySelectorAll(".i-14");
+let out14 = document.querySelector(".out-14");
+function t14() {
+  let i = 0;
+  // let
+  while (i < inp14.length) {
+    if (inp14[i].checked) {
+      out14.innerHTML = inp14[i].value;
+    }
+    i++;
+  }
+}
 
 document.querySelector(".b-14").onclick = t14;
 
@@ -272,7 +282,25 @@ document.querySelector(".b-14").onclick = t14;
 // Кнопка .b-15 запускает функцию t15  Функция должна выводить следующую последовательность в .out-15:
 // 77_88_99_77_88_99_77_88_99_
 // Для вывода использовать цикл  while. Разделитель подчеркивание.
-
-function t15() {}
+let out15 = document.querySelector(".out-15");
+function t15() {
+  let out = "";
+  let i = 0;
+  while (i < 3) {
+    out += `77_`;
+    i++;
+    let k = 0;
+    while (k < 1) {
+      out += `88_`;
+      k++;
+      let f = 0;
+      while (f < 1) {
+        out += `99_`;
+        f++;
+      }
+    }
+  }
+  out15.textContent = out;
+}
 
 document.querySelector(".b-15").onclick = t15;
