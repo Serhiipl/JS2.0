@@ -29,24 +29,39 @@ document.querySelector(".b-3").onclick = f3;
 
 //  Task 4
 // По нажатию кнопки .b-4 запускайте функцию f4, которая делает toggle класса .bg-orange для блока out-4.
-
+let out4 = document.querySelector(".out-4");
 function f4() {
-  document.querySelector(".out-4").classList.toggle("bg-orange");
+  out4.classList.toggle("bg-orange");
 }
 
 document.querySelector(".b-4").onclick = f4;
 
 //  Task 5
 // По нажатию .b-5 запускайте функцию f5, которая проверяет наличие класса .bg-orange у блока .out-4 (да, именно у out-4 ). Результат - true или false, выводите в .out-5.
+let out5 = document.querySelector(".out-5");
 
-function f5() {}
+function f5() {
+  if (out4.classList.contains("bg-orange")) {
+    out5.innerHTML = true;
+    console.log(out5);
+  } else {
+    out5.innerHTML = false;
+    console.log(out5);
+  }
+}
 
 document.querySelector(".b-5").onclick = f5;
 
 //  Task 6
 // По нажатию .b-6 запускайте функцию f6, которая выводит в .out-6 количество параграфов с классом .p-6.
-
-function f6() {}
+let par = document.querySelectorAll(".p-6");
+function f6() {
+  let out = "";
+  for (let i = 1; i <= par.length; i++) {
+    out = i;
+  }
+  document.querySelector(".out-6").innerHTML = out;
+}
 
 document.querySelector(".b-6").onclick = f6;
 
@@ -56,6 +71,9 @@ document.querySelector(".b-6").onclick = f6;
 let blocks7 = document.querySelectorAll(".out-7");
 
 function f7() {
+  for (let i = 0; i < blocks7.length; i++) {
+    blocks7[i].classList.add("bg-orange");
+  }
   //внутри цикла blocks7[i].classList....
 }
 
@@ -67,6 +85,9 @@ document.querySelector(".b-7").onclick = f7;
 let blocks8 = document.querySelectorAll(".out-8");
 
 function f8() {
+  for (let i = 0; i < blocks8.length; i++) {
+    blocks8[i].classList.toggle("bg-orange");
+  }
   //внутри цикла blocks8[i].classList....
 }
 
