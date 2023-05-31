@@ -275,9 +275,17 @@ document.querySelector(".b-15").onclick = f15;
 
 let ar16 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 let ar16_odd = [];
+console.log(ar16_odd);
 let ar16_even = [];
 
-function f16() {}
+function f16() {
+  for (let i = 0; i < ar16.length; i++) {
+    if (ar16 % 2 === 0) {
+      ar16_even.push(ar16[i]);
+    }
+    ar16_odd.push(ar16[i]);
+  }
+}
 
 document.querySelector(".b-16").onclick = f16;
 
