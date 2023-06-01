@@ -275,16 +275,18 @@ document.querySelector(".b-15").onclick = f15;
 
 let ar16 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 let ar16_odd = [];
-console.log(ar16_odd);
 let ar16_even = [];
 
 function f16() {
   for (let i = 0; i < ar16.length; i++) {
-    if (ar16 % 2 === 0) {
-      ar16_even.push(ar16[i]);
+    if (ar16[i] % 2 == 0) {
+      ar16_even[i] = ar16[i];
+    } else if (!(ar16[i] % 2 == 0)) {
+      ar16_odd[i] = ar16[i];
     }
-    ar16_odd.push(ar16[i]);
   }
+  document.querySelector(".out-16-even").textContent = `${ar16_even} `;
+  document.querySelector(".out-16-odd").textContent = `${ar16_odd} `;
 }
 
 document.querySelector(".b-16").onclick = f16;
@@ -297,7 +299,13 @@ document.querySelector(".b-16").onclick = f16;
 
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
-function f17() {}
+function f17() {
+  let temp = "";
+  for (let i = 0; i < ar17.length; i++) {
+    if (ar17[i] > 3) temp += ar17[i];
+  }
+  document.querySelector(".out-17").textContent = temp.length;
+}
 
 document.querySelector(".b-17").onclick = f17;
 
@@ -309,7 +317,16 @@ document.querySelector(".b-17").onclick = f17;
 
 let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
-function f18() {}
+function f18() {
+  let element = 0;
+  for (let i = 0; i < ar18.length; i++) {
+    if (element < ar18[i]) {
+      element = ar18[i];
+    }
+  }
+
+  document.querySelector(".out-18").textContent = element;
+}
 
 document.querySelector(".b-18").onclick = f18;
 
@@ -321,7 +338,15 @@ document.querySelector(".b-18").onclick = f18;
 
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
-function f19() {}
+function f19() {
+  let element = 0;
+  for (let k = 1; k < ar19.length; k++) {
+    if (ar19[k] < ar19[element]) {
+      element = [k];
+    }
+  }
+  document.querySelector(".out-19").textContent = element;
+}
 
 document.querySelector(".b-19").onclick = f19;
 
@@ -333,6 +358,12 @@ document.querySelector(".b-19").onclick = f19;
 
 let ar20 = [4, 5, 6, 7, 8, 9, 10];
 
-function f20() {}
+function f20() {
+  let elementSum = 0;
+  for (let i = 0; i < ar20.length; i++) {
+    elementSum += ar20[i];
+  }
+  document.querySelector(".out-20").textContent = elementSum;
+}
 
 document.querySelector(".b-20").onclick = f20;
