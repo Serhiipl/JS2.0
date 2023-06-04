@@ -161,7 +161,10 @@ document.querySelector(".b-10").onclick = f10;
 
 let d11 = [2, 3, 4, 5, 6, 7];
 
-function f11() {}
+function f11() {
+  let inp = +document.querySelector(".i-11").value;
+  document.querySelector(".out-11").textContent = d11.indexOf(inp);
+}
 
 document.querySelector(".b-11").onclick = f11;
 
@@ -173,7 +176,16 @@ document.querySelector(".b-11").onclick = f11;
 
 let d12 = [6, 62, 60, 70, 1, 5];
 
-function f12() {}
+function f12() {
+  let inp = +document.querySelector(".i-12").value;
+  for (let i = 0; i < d12.length; i++) {
+    if (d12[i] === inp) {
+      document.querySelector(".out-12").textContent = i;
+      break;
+    }
+    document.querySelector(".out-12").textContent = -1;
+  }
+}
 
 document.querySelector(".b-12").onclick = f12;
 
@@ -186,6 +198,11 @@ document.querySelector(".b-12").onclick = f12;
 let d13 = [6, 0, 22, 1, 4, 76];
 
 function f13() {
+  let t = [];
+  for (let i = d13.length - 1; i >= 0; i--) {
+    t.push(d13[i]);
+  }
+  d13 = t;
   showArr(".out-13", d13);
 }
 
