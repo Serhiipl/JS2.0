@@ -106,6 +106,13 @@ let d8 = [2, "4", 12, 67, "hello"];
 
 function f8() {
   let inp = document.querySelector(".i-8").value;
+  let t8 = [];
+  t8[0] = inp;
+
+  for (let i = 0; i < d8.length; i++) {
+    t8[i + 1] = d8[i];
+  }
+  d8 = t8;
 
   showArr(".out-8", d8);
 }
@@ -121,6 +128,11 @@ document.querySelector(".b-8").onclick = f8;
 let d9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
+  let t = [];
+  for (let i = 0; i < d9.length; i++) {
+    d9[i] = d9[i + 1];
+  }
+  d9.length = d9.length - 1;
   showArr(".out-9", d9);
 }
 
@@ -135,6 +147,7 @@ document.querySelector(".b-9").onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
+  d10.reverse();
   showArr(".out-10", d10);
 }
 
