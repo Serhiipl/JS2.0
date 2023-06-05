@@ -217,6 +217,11 @@ document.querySelector(".b-13").onclick = f13;
 let d14 = [];
 
 function f14() {
+  let inp = +document.querySelector(".i-14").value;
+  for (let i = 0; i < inp; i++) {
+    d14.push(1);
+  }
+  console.log(d14);
   showArr(".out-14", d14);
 }
 
@@ -231,6 +236,17 @@ document.querySelector(".b-14").onclick = f14;
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
+  let inp = +document.querySelector(".i-15").value;
+  for (let i = 0; i < d15.length; i++) {
+    if (d15[i] === inp) {
+      document.querySelector(".out-15").textContent =
+        "Массив содержит этот элемент.";
+      return;
+    }
+  }
+
+  d15.push(inp);
+
   showArr(".out-15", d15);
 }
 
@@ -247,7 +263,9 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
-  showArr(".out-16", d16);
+  d16 = d161.concat(d162);
+  //   d16 = [...d161, ...d162]; // более новый метод - оператор spread
+  d16 = showArr(".out-16", d16);
 }
 
 document.querySelector(".b-16").onclick = f16;
