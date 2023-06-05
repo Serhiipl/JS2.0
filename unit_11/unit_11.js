@@ -265,7 +265,7 @@ let d162 = [23, 24, 56, 87];
 function f16() {
   d16 = d161.concat(d162);
   //   d16 = [...d161, ...d162]; // более новый метод - оператор spread
-  d16 = showArr(".out-16", d16);
+  showArr(".out-16", d16);
 }
 
 document.querySelector(".b-16").onclick = f16;
