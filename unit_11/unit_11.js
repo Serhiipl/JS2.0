@@ -281,7 +281,16 @@ let d171 = ["a", "b", "c", "d"];
 let d172 = [1, 2, 3, 4, 5];
 
 function f17() {
+  for (let i = 0; i < d171.length; i++) {
+    // d17.push(d171[i]);
+    d17[d17.length] = d171[i];
+  }
+  for (let i = 0; i < d172.length; i++) {
+    // d17.push(d172[i]);
+    d17[d17.length] = d172[i];
+  }
   showArr(".out-17", d17);
+  console.log(d17);
 }
 
 document.querySelector(".b-17").onclick = f17;
@@ -294,7 +303,10 @@ document.querySelector(".b-17").onclick = f17;
 
 let d18 = ["b", "c", "45", "e", "z", "y"];
 
-function f18() {}
+function f18() {
+  let inp = document.querySelector(".i-18").value;
+  document.querySelector(".out-18").textContent = d18.includes(inp);
+}
 
 document.querySelector(".b-18").onclick = f18;
 
@@ -318,7 +330,12 @@ let d19 = [
 ];
 let maxString = "";
 
-function f19() {}
+function f19() {
+  for (let i = 0; i < d19.length; i++) {
+    if (maxString.length < d19[i].length) maxString = d19[i];
+  }
+  document.querySelector(".out-19").textContent = maxString;
+}
 
 document.querySelector(".b-19").onclick = f19;
 
@@ -330,6 +347,8 @@ document.querySelector(".b-19").onclick = f19;
 
 let d20 = [4, 5, 6, 7, 8, 9, 10];
 
-function f20() {}
+function f20() {
+  document.querySelector(".out-20").textContent = d20.join("");
+}
 
 document.querySelector(".b-20").onclick = f20;
