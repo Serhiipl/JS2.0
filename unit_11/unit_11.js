@@ -217,6 +217,11 @@ document.querySelector(".b-13").onclick = f13;
 let d14 = [];
 
 function f14() {
+  let inp = +document.querySelector(".i-14").value;
+  for (let i = 0; i < inp; i++) {
+    d14.push(1);
+  }
+  console.log(d14);
   showArr(".out-14", d14);
 }
 
