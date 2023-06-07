@@ -232,7 +232,20 @@ document.querySelector(".b-12").onclick = f12;
 
 let a13 = [];
 
-function f13() {}
+function f13() {
+  let tAr = [];
+  for (let i = 0; i < 8; i++) {
+    for (let k = 0; k < 8; k++) {
+      if (k % 2 == 0) {
+        tAr[tAr.length] = 0;
+      } else if (k % 2 !== 0) {
+        tAr[tAr.length] = 1;
+      }
+    }
+    a13[a13.length] = tAr;
+  }
+  console.log(tAr);
+}
 
 document.querySelector(".b-13").onclick = f13;
 
