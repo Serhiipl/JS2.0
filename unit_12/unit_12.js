@@ -149,6 +149,12 @@ function f9() {
     [21, -34, -43],
     [44, -56],
   ];
+  for (let i = 0; i < a9.length; i++) {
+    for (let k = 0; k < a9[i].length; k++) {
+      if (a9[i][k] > 0) out += `${a9[i][k]} `;
+    }
+  }
+  document.querySelector(".out-9").textContent = out;
 }
 
 document.querySelector(".b-9").onclick = f9;
@@ -165,6 +171,12 @@ function f10() {
     ["st", 21, -34, -43],
     [44, -56, "task"],
   ];
+  for (let i = 0; i < a10.length; i++) {
+    for (let k = 0; k < a10[i].length; k++) {
+      if (typeof a10[i][k] === "string") out += `${a10[i][k]} `;
+    }
+  }
+  document.querySelector(".out-10").textContent = out;
 }
 
 document.querySelector(".b-10").onclick = f10;
@@ -180,6 +192,12 @@ let a11 = [
 
 function f11() {
   let out = "";
+  for (let i = a11.length - 1; i >= 0; i--) {
+    for (let x = a11[i].length - 1; x >= 0; x--) {
+      out += `${a11[i][x]} `;
+    }
+  }
+  document.querySelector(".out-11").textContent = out;
 }
 
 document.querySelector(".b-11").onclick = f11;
@@ -188,6 +206,7 @@ document.querySelector(".b-11").onclick = f11;
 // Дан массив a12 который моделирует шахматную доску. Используя цикл выведите в out-12 единицы из этого массива. Все действия в функции f12. Функция запускается при нажатии на b12. Вывод через пробел.
 
 function f12() {
+  let out = "";
   let a12 = [
     [0, 1, 0, 1, 0, 1, 0, 1],
     [1, 0, 1, 0, 1, 0, 1, 0],
@@ -198,6 +217,12 @@ function f12() {
     [0, 1, 0, 1, 0, 1, 0, 1],
     [1, 0, 1, 0, 1, 0, 1, 0],
   ];
+  for (let i = 0; i < a12.length; i++) {
+    for (let n = 0; n < a12[i].length; n++) {
+      if (a12[i][n] > 0) out += `${a12[i][n]} `;
+    }
+  }
+  document.querySelector(".out-12").textContent = out;
 }
 
 document.querySelector(".b-12").onclick = f12;
