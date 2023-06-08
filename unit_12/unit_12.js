@@ -233,18 +233,18 @@ document.querySelector(".b-12").onclick = f12;
 let a13 = [];
 
 function f13() {
-  let tAr = [];
   for (let i = 0; i < 8; i++) {
+    let row = [];
     for (let k = 0; k < 8; k++) {
-      if (k % 2 == 0) {
-        tAr[tAr.length] = 0;
-      } else if (k % 2 !== 0) {
-        tAr[tAr.length] = 1;
+      if ((k + i) % 2 == 0) {
+        row.push(0);
+      } else {
+        row.push(1);
       }
     }
-    a13[a13.length] = tAr;
+    a13.push(row);
   }
-  console.log(tAr);
+  console.log(a13);
 }
 
 document.querySelector(".b-13").onclick = f13;
@@ -255,7 +255,13 @@ document.querySelector(".b-13").onclick = f13;
 
 let a14 = [[], [1, 0], [1, 0, 0, 0], [3, 4, 5, 6, 7, 8], [1, 2]];
 
-function f14() {}
+function f14() {
+  let out = "";
+  for (let i = 0; i < a14.length; i++) {
+    out += `${a14[i].length} `;
+  }
+  document.querySelector(".out-14").textContent = out;
+}
 
 document.querySelector(".b-14").onclick = f14;
 
@@ -265,7 +271,13 @@ document.querySelector(".b-14").onclick = f14;
 
 let a15 = [[], [1, 0], [1, 0, 0, 0], [3, 4, 5, 6, 7, 8], [1, 2]];
 
-function f15() {}
+function f15() {
+  let out = 0;
+  for (let i = 0; i < a15.length; i++) {
+    if (out < a15[i].length) out = a15[i].length;
+  }
+  document.querySelector(".out-15").textContent = out;
+}
 
 document.querySelector(".b-15").onclick = f15;
 
