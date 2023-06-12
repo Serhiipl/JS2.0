@@ -170,9 +170,11 @@ function f9() {
   let out = "";
   for (let key in a9) {
     if (a9[key] == inp) {
+      delete a9[key];
       out += `${key} `;
     }
   }
+  console.log(a9);
   document.querySelector(".out-9").textContent = out;
 }
 
@@ -235,11 +237,12 @@ let a12 = {
 
 function f12() {
   let inp = document.querySelector(".i-12").value;
-  for (const key in a12) {
-    if (a12[key] === inp) {
+  for (let key in a12) {
+    if (a12[key] == inp) {
       delete a12[key];
     }
   }
+
   f5(a12, ".out-12");
 }
 
@@ -255,7 +258,14 @@ let a13 = {
   ivan: 6,
 };
 
-function f13() {}
+function f13() {
+  let sum = 0;
+  for (const key in a13) {
+    if (Number.isFinite(a13[key])) sum += a13[key];
+  }
+
+  document.querySelector(".out-13").innerHTML = sum;
+}
 
 document.querySelector(".b-13").onclick = f13;
 
@@ -270,7 +280,15 @@ let a14 = {
   ivan: [9, 10],
 };
 
-function f14() {}
+function f14() {
+  let out = "";
+  for (const key in a14) {
+    for (let i = 0; i < 1; i++) {
+      out += `${a14[key][i]} `;
+    }
+  }
+  document.querySelector(".out-14").textContent = out;
+}
 
 document.querySelector(".b-14").onclick = f14;
 
@@ -286,7 +304,15 @@ let a15 = {
   ivan: [9, 10],
 };
 
-function f15() {}
+function f15() {
+  let out = "";
+  for (const key in a15) {
+    for (let i = 0; i < a15[key].length; i++) {
+      out += `${a14[key][i]} `;
+    }
+  }
+  document.querySelector(".out-15").textContent = out;
+}
 
 document.querySelector(".b-15").onclick = f15;
 
@@ -308,7 +334,17 @@ let a16 = {
   },
 };
 
-function f16() {}
+function f16() {
+  let element = "";
+  for (let key in a16) {
+    for (i in a16[key]) {
+      if (i == "name") {
+        element += `${a16[key][i]} `;
+      }
+    }
+  }
+  document.querySelector(".out-16").textContent = element;
+}
 
 document.querySelector(".b-16").onclick = f16;
 
@@ -330,7 +366,15 @@ let a17 = {
   },
 };
 
-function f17() {}
+function f17() {
+  let out = "";
+  for (let key in a17) {
+    if (a17[key]["age"] > 30) {
+      out += `${a17[key]["name"]} `;
+    }
+  }
+  document.querySelector(".out-17").textContent = out;
+}
 
 document.querySelector(".b-17").onclick = f17;
 
