@@ -192,7 +192,7 @@ let a11 = [
 
 function f11() {
   let out = "";
-  for (let i = a11.length - 1; i >= 0; i--) {
+  for (let i = 0; i < a11.length; i++) {
     for (let x = a11[i].length - 1; x >= 0; x--) {
       out += `${a11[i][x]} `;
     }
