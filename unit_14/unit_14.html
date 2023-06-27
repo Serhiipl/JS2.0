@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Unit 14</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -18,7 +19,28 @@
       <p>
         Верстку в этом юните - делаете самостоятельно. Имя CSS файла - любое.
       </p>
-      <div class="main-container"></div>
+    </div>
+    <div class="main-container">
+      <div class="select-container">
+        <div class="select-wrapper">
+          <form action="" class="select-form">
+            <label for="country">
+              <select name="country" id="country">
+                <option value="" disabled>Choose your country</option>
+                <option value="UA">Ukraine</option>
+                <option value="PL">Poland</option>
+                <option value="GB">Great Britain</option>
+              </select>
+            </label>
+            <label for="city">choose your city</label>
+            <select name="city" id="city">
+              <option value="" disabled>choose your city</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <div class="center-container"></div>
+      <div class="right-container"></div>
     </div>
 
     <script src="unit_14.js"></script>

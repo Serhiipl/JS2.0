@@ -1,5 +1,59 @@
+/*reset css*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
-  max-width: 80rem;
-  left: 0;
-  right: auto;
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90rem;
+  margin: auto;
+  padding: 0 3.125rem 0 3.125rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 90rem;
+  margin: auto;
+}
+.select-container {
+  flex: 1 1 31.25rem;
+  height: 43.75rem;
+  background-color: aqua;
+  padding: 3.125rem 3.125rem 0 3.125rem;
+}
+.select-wrapper {
+  margin: auto;
+}
+.select-form {
+  display: flex;
+  flex-direction: column;
+}
+.center-container {
+  flex: 1 1 31.25rem;
+  height: 43.75rem;
+  background-color: rgb(21, 255, 0);
+}
+.right-container {
+  flex: 1 1 31.25rem;
+  height: 43.75rem;
+  background-color: rgb(191, 255, 0);
 }
