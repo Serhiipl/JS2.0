@@ -31,3 +31,26 @@ countrySelect.addEventListener("change", (event) => {
     citySelect.appendChild(cityOpt);
   });
 });
+
+// fetch parameters
+const params = {
+  url: "http://api.openweathermap.org/data/2.5/",
+  apikey: "63b19f2b935cc04800813e5ba7ff3f10",
+};
+
+citySelect.addEventListener("change", (event) => {
+  const selectedCity = event.target.value;
+  getWeather();
+});
+
+function getWeather() {
+  const cityId = document.querySelector("#city").value;
+  console.log(cityId);
+  fetch(
+    `${params.url}weather?id=${cityId}&units=metric&APPID=${params.apikey}`
+  ).then((weather) => {
+    return weather.json();
+  });
+  // .then(showWeather);
+}
+getWeather();
