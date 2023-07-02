@@ -56,13 +56,27 @@ citySelect.addEventListener("change", (event) => {
 
 function getWeather() {
   const cityId = document.querySelector("#city").value;
-  console.log(cityId);
-  fetch(
-    `${params.url}weather?id=${cityId}&units=metric&APPID=${params.apikey}`
-  ).then((weather) => {
-    return weather.json();
-  });
-  // .then(showWeather);
+  // console.log(cityId);
+  fetch(`${params.url}weather?id=${cityId}&units=metric&APPID=${params.apikey}`)
+    .then((weather) => {
+      return weather.json();
+    })
+    .then(showWeather);
+}
+function showWeather(weather) {
+  console.log(weather);
+  document.querySelector(".city-name").textContent = weather.name;
+  document.querySelector(".actual-temp").innerHTML = `${
+    Math.round(weather.main.temp) + "&deg"
+  }`;
+  document.querySelector(".min-temp").innerHTML = `Min:${
+    Math.round(weather.main.temp_min) + "&deg"
+  }`;
+  document.querySelector(".max-temp").innerHTML = `Max:${
+    Math.round(weather.main.temp_max) + "&deg"
+  }`;
+  document.querySelector(".description").textContent =
+    weather.weather[0]["description"];
 }
 
 // download data from json file
