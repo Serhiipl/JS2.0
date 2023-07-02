@@ -65,7 +65,7 @@ function getWeather() {
 }
 function showWeather(weather) {
   console.log(weather);
-  document.querySelector(".city-name").textContent = weather.name;
+  document.querySelector(".city-name").textContent = weather.name.toUpperCase();
   document.querySelector(".actual-temp").innerHTML = `${
     Math.round(weather.main.temp) + "&deg"
   }`;
