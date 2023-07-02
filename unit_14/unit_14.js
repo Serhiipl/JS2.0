@@ -77,6 +77,9 @@ function showWeather(weather) {
   }`;
   document.querySelector(".description").textContent =
     weather.weather[0]["description"];
+  document.querySelector(
+    "#icon"
+  ).src = `https://openweathermap.org/img/wn/${weather.weather[0]["icon"]}@2x.png`;
 }
 
 // download data from json file
