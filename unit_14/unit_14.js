@@ -63,6 +63,34 @@ function getWeather() {
     })
     .then(showWeather);
 }
+function windDirection() {
+  if (degree === 0 || degree === 360) {
+    direction = "N";
+  } else if (degree > 0 && degree < 90) {
+    direction = "NE";
+  } else if (degree === 90) {
+    direction = "E";
+  } else if (degree > 90 && degree < 180) {
+    direction = "SE";
+  } else if (degree === 180) {
+    direction = "S";
+  } else if (degree > 180 && degree < 270) {
+    direction = "SW";
+  } else if (degree === 270) {
+    direction = "W";
+  } else if (degree > 270 && degree < 360) {
+    direction = "NW";
+  } else {
+    direction = "-";
+  }
+
+  return direction;
+}
+
+let degree;
+console.log(degree);
+let direction;
+
 function showWeather(weather) {
   console.log(weather);
   document.querySelector(".city-name").textContent = weather.name.toUpperCase();
@@ -80,6 +108,11 @@ function showWeather(weather) {
   document.querySelector(
     "#icon"
   ).src = `https://openweathermap.org/img/wn/${weather.weather[0]["icon"]}@2x.png`;
+
+  // console.log(direction);
+  degree = weather.wind.deg;
+  windDirection();
+  document.querySelector(".wind-direction").textContent = direction;
 }
 
 // download data from json file
