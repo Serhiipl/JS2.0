@@ -180,31 +180,25 @@ function getWeather() {
     .then(showWeather);
 }
 getWeather();
+
 // функція напрямку вітру
 function windDirection() {
   if (degree === 0 || degree === 360) {
     direction = "N";
   } else if (degree > 0 && degree < 90) {
     direction = "NE";
-    directionImg.style.rotate = "0deg";
   } else if (degree === 90) {
     direction = "E";
-    directionImg.style.rotate = "90deg";
   } else if (degree > 90 && degree < 180) {
     direction = "SE";
-    directionImg.style.rotate = "45deg";
   } else if (degree === 180) {
     direction = "S";
-    directionImg.style.rotate = "180deg";
   } else if (degree > 180 && degree < 270) {
     direction = "SW";
-    directionImg.style.rotate = "45deg";
   } else if (degree === 270) {
     direction = "W";
-    directionImg.style.rotate = "270deg";
   } else if (degree > 270 && degree < 360) {
     direction = "NW";
-    directionImg.style.rotate = "-45deg";
   } else {
     direction = "-";
   }
@@ -236,4 +230,5 @@ function showWeather(weather) {
   document.querySelector(
     ".speed"
   ).textContent = `Speed:${weather.wind.speed} m/s`;
+  directionImg.style.rotate = degree + "deg";
 }
