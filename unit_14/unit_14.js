@@ -224,6 +224,12 @@ function showWeather(weather) {
     "#icon"
   ).src = `https://openweathermap.org/img/wn/${weather.weather[0]["icon"]}@2x.png`;
 
+  document.querySelector(".pressure-units").textContent = `Pressure:
+  ${weather.main.pressure} hPa.`;
+  document.querySelector(
+    ".humidity-units"
+  ).textContent = `Humidity: ${weather.main.humidity}%`;
+
   degree = weather.wind.deg;
   windDirection();
   document.querySelector(".wind-direction").textContent = `${direction}`;
