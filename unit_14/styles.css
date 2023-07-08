@@ -95,8 +95,6 @@ body {
   bottom: 2rem;
   right: 2rem;
 }
-.legend {
-}
 
 .center-container {
   flex: 2 2 31.25rem;
@@ -140,6 +138,12 @@ body {
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+}
+#pressure {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 .actual-temp {
   font-size: 2.8rem;
