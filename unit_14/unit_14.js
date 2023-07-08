@@ -18,6 +18,7 @@ const cities = [
       lon: 30.516666,
       lat: 50.433334,
     },
+    selected: true,
   },
   {
     id: 698740,
@@ -160,8 +161,10 @@ for (let i = 0; i < cities.length; i++) {
   let cityOpt = document.createElement("option");
   cityOpt.text = cities[i].name;
   cityOpt.value = cities[i].id;
+  cityOpt.selected = cities[i].selected ? true : false;
   citySelect.appendChild(cityOpt);
 }
+
 // параметри для запиту
 const params = {
   url: "http://api.openweathermap.org/data/2.5/",

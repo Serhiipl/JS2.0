@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles.css" />
     <title>Unit 14</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -23,9 +26,14 @@
     <div class="main-container">
         <div class="select-container">
           <div class="select-wrapper">
-              <label for="city">choose your city</label>
+              <label for="city" class="city-label">Choose your city</label>
               <select name="city" id="city">
               </select>
+          </div>
+          <div class="legend-wrapper">
+            <p class="legend">Weather API provided by<hr>
+             <a href="openweathermap.org">openweathermap.org</a>
+            </p>
           </div>
         </div>
         <div class="center-container">
