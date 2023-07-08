@@ -13,9 +13,15 @@ console.log(s1);
 // Task 2
 // При нажатии b-2 выполняете функцию f2. Функция должна добавить в набор s2 элементы, которые пользователь вводит в i-2. Функция должна выводить в консоль s2 после каждого добавления элемента.
 
-// let s2 =
+let s2 = new Set();
+let input2 = document.querySelector(".i-2");
 
-const f2 = () => {};
+const f2 = () => {
+  let val = input2.value;
+  s2.add(val);
+  console.log(s2);
+  input2.value = "";
+};
 
 document.querySelector(".b-2").onclick = f2;
 
@@ -24,7 +30,10 @@ document.querySelector(".b-2").onclick = f2;
 
 let s3 = new Set(["one", "two", "four"]); // обратите внимание, как просто можно добавить массив в набор!
 
-const f3 = () => {};
+const f3 = () => {
+  s3.delete(document.querySelector(".i-3").value);
+  console.log(s3);
+};
 
 document.querySelector(".b-3").onclick = f3;
 
@@ -33,7 +42,10 @@ document.querySelector(".b-3").onclick = f3;
 
 let s4 = new Set(["a", "b", "c", "z"]);
 
-const f4 = () => {};
+const f4 = () => {
+  let i4 = document.querySelector(".i-4").value;
+  console.log(s4.has(i4));
+};
 
 document.querySelector(".b-4").onclick = f4;
 
@@ -42,7 +54,10 @@ document.querySelector(".b-4").onclick = f4;
 
 let s5 = new Set(["a", "b", "c", "z", "a2", "b2", "c2", "z2"]);
 
-const f5 = () => {};
+const f5 = () => {
+  let out = document.querySelector(".out-5");
+  out.textContent = s5.size;
+};
 
 document.querySelector(".b-5").onclick = f5;
 
