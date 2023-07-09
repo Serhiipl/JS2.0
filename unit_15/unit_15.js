@@ -99,7 +99,14 @@ let s8 = new Set([
 ]);
 let ar8 = [];
 
-const f8 = () => {};
+const f8 = () => {
+  for (const i of s8) {
+    if (i > 5) {
+      ar8.push(i);
+    }
+  }
+  console.log(ar8);
+};
 
 document.querySelector(".b-8").onclick = f8;
 
@@ -107,7 +114,13 @@ document.querySelector(".b-8").onclick = f8;
 //  При нажатии b-9 выполняете функцию f9. Функция должна принимать набор our_set в качестве параметра, преобразовывать его в строку, причем после каждого символа строки должен быть пробел. Функция должна возвращать результирующую строку.
 // В нашем примере результат должен быть 9 8 7 6 5
 
-const f9 = (our_set) => {};
+const f9 = (our_set) => {
+  let out = "";
+  for (const i of our_set) {
+    out += i.toString() + " ";
+  }
+  return out;
+};
 
 document.querySelector(".b-9").onclick = () => {
   let s9 = new Set([9, 8, 7, 6, 5]);
@@ -117,8 +130,13 @@ document.querySelector(".b-9").onclick = () => {
 // Task 10
 // При нажатии b-10 выполняете функцию f10. Функция должна принимать набор set в качестве параметра и выводить его в указанный элемент. Элемент указывается как второй параметр функции f10. Вывод значений - через пробел.
 
-const f10 = (out_set, elem) => {};
-
+const f10 = (out_set, elem) => {
+  let out = "";
+  for (const i of out_set) {
+    out += `${i} `;
+  }
+  document.querySelector(elem).innerHTML = out;
+};
 document.querySelector(".b-10").onclick = () => {
   let a10 = new Set(["4", "5", "6"]);
   f10(a10, ".out-10");
@@ -143,7 +161,11 @@ document.querySelector(".b-11").onclick = f11;
 let str12 =
   "The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children";
 
-const f12 = () => {};
+const f12 = () => {
+  let arr12 = str12.split("");
+  let set = new Set(arr12);
+  return set;
+};
 
 document.querySelector(".b-12").onclick = () => {
   console.log(f12());
@@ -159,7 +181,13 @@ document.querySelector(".b-12").onclick = () => {
 let str13 = "abbat pro";
 
 const f13 = () => {
-  // return
+  let str = str13.split("");
+  let out = {};
+  // const iterator = set1.entries();
+  for (const i of str) {
+    out[i]++;
+  }
+  return out;
 };
 
 document.querySelector(".b-13").onclick = () => {
