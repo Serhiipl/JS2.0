@@ -179,14 +179,13 @@ document.querySelector(".b-12").onclick = () => {
 // { H : 1, e : 1, l : 2, o : 1 }:
 
 let str13 = "abbat pro";
-
 const f13 = () => {
-  let str = str13.split("");
   let out = {};
-  // const iterator = set1.entries();
-  for (const i of str) {
-    out[i]++;
-  }
+  let set = new Set(str13);
+  set.forEach((el) => {
+    let count = str13.split(el).length - 1;
+    out[el] = count;
+  });
   return out;
 };
 
