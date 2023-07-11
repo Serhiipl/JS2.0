@@ -1,3 +1,6 @@
 youtube_training/
 arhives/
+node_modules/
+package-lock.json
+package.json
 city.list.json
