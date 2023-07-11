@@ -44,7 +44,7 @@ let s4 = new Set(["a", "b", "c", "z"]);
 
 const f4 = () => {
   let i4 = document.querySelector(".i-4").value;
-  console.log(s4.has(i4));
+  document.querySelector(".out-4").innerHTML = s4.has(i4);
 };
 
 document.querySelector(".b-4").onclick = f4;
