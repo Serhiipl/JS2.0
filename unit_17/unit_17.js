@@ -131,7 +131,20 @@ document.querySelector(".b-7").onclick = () => {
 
 let a8 = [3, 14, 15, 92, 7, 32, 59];
 
-function t8() {}
+function t8() {
+  a8.map((item, index) => {
+    if (item % 2 === 0) {
+      a8_res.push(index);
+    }
+  });
+
+  // for (const item in a8) {
+  //   if (a8[item] % 2 === 0) {
+  //     a8_res.push(item);
+  //   }
+  // }
+  return a8_res;
+}
 
 document.querySelector(".b-8").onclick = () => {
   console.log(t8());
@@ -147,7 +160,12 @@ let a9 = [
   "Far Cry Primal",
 ];
 
-function t9() {}
+function t9() {
+  a9.forEach((item, index) => {
+    a9[index] = item.toLowerCase();
+  });
+  return a9;
+}
 
 document.querySelector(".b-9").onclick = () => {
   console.log(t9());
@@ -158,7 +176,14 @@ document.querySelector(".b-9").onclick = () => {
 
 let a10 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
-function t10() {}
+function t10() {
+  a10.forEach((item, index) => {
+    if (item < 0) {
+      a10[index] = 0;
+    }
+  });
+  return a10;
+}
 
 document.querySelector(".b-10").onclick = () => {
   console.log(t10());
@@ -169,7 +194,14 @@ document.querySelector(".b-10").onclick = () => {
 
 let a11 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
-function t11() {}
+function t11() {
+  a11_res = a11.filter((item, index) => {
+    if (a11[index] % 2 === 0) {
+      a11_res[index] = item;
+    }
+  });
+  return a11_res;
+}
 
 document.querySelector(".b-11").onclick = () => {
   console.log(t11());
