@@ -115,14 +115,27 @@ document.querySelector(".b-8").onclick = t8;
 
 // Task 9 ============================================
 /*  Дан массив a9 = [['hi', 'mahai'], ['test', 'best']] - преобразуйте его в строку. Разделитель - дефис. Результат присвойте a9_res. Запускаться решение должно при вызове функции t9. Допускается лишний дефис в конце строки!!! */
-
-function t9() {}
+let a9 = [
+  ["hi", "mahai"],
+  ["test", "best"],
+];
+function t9() {
+  let arr = [];
+  for (let item of a9) {
+    for (let el of item) {
+      arr.push(el);
+    }
+  }
+  a9_res = arr.join("-");
+  document.querySelector(".out-9").textContent = a9_res;
+  console.log(arr);
+}
 
 document.querySelector(".b-9").onclick = t9;
 
 // Task 10 ============================================
 /*  Дан массив a10 = {name: ivan, age: 15, sex: 1, id: 45} - преобразуйте его в query строку ( так передаются GET параметры). Найдите описание что такое query строка самостоятельно. Разделитель - амперсанд. Результат присвойте a10_res. Запускаться решение должно при вызове функции t10. Допускается лишний амперсанд в конце строки!!! */
-
+let a10 = { name: ivan, age: 15, sex: 1, id: 45 };
 function t10() {}
 
 document.querySelector(".b-10").onclick = t10;
