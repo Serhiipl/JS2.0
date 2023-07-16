@@ -59,22 +59,25 @@ function t4() {
   let spansArr = document.querySelectorAll(".task-4");
   let a4_res = [];
 
-  spansArr.forEach((el) => {
-    // let data = el.getAttribute("data");
-    a4_res.push(el.getAttribute("data"));
-  });
-
+  spansArr.forEach((el) => a4_res.push(el.getAttribute("data")));
+  document.querySelector(".out-4").innerHTML = a4_res;
   console.log(a4_res);
 }
-
-document.querySelector(".b-4").onclick = t4;
 
 document.querySelector(".b-4").onclick = t4;
 
 // Task 5 ============================================
 /*  На странице созданы 3 p.task-5 c атрибутом data. С помощью forEach переберите их и добавьте событие клик. Напишите функцию t5, которая будет запускаться при клике и добавлять атрибут data элемента, по которому кликнули в массив a5_res.*/
 
-function t5() {}
+function t5() {
+  let paragrafs = document.querySelectorAll(".task-5");
+  paragrafs.forEach((p) => {
+    p.addEventListener("click", (e) => {
+      a5_res.push(p.getAttribute("data"));
+      document.querySelector(".out-5").innerHTML = a5_res;
+    });
+  });
+}
 
 document.querySelectorAll(".task-5").forEach((elem) => {
   elem.onclick = t5;
@@ -82,22 +85,31 @@ document.querySelectorAll(".task-5").forEach((elem) => {
 
 // Task 6 ============================================
 /*  Дана строка str6='helloworld' - преобразуйте ее в массив (c разбиением по буквам) и присвойте a6_res. Выведите на страницу. Запускаться решение должно при вызове функции t6. */
-
-function t6() {}
+let str6 = "helloworld";
+function t6() {
+  a6_res.push(str6.split(""));
+  document.querySelector(".out-6").innerHTML = a6_res;
+}
 
 document.querySelector(".b-6").onclick = t6;
 
 // Task 7 ============================================
 /*  Дана строка str7='hello world hi mazai' - преобразуйте ее в массив и разбейте по словам. Причем слова не должны содержать пробелов и присвойте a7_res. выведите на страницу.  Запускаться решение должно при вызове функции t7. */
-
-function t7() {}
+let str7 = "hello world hi mazai";
+function t7() {
+  a7_res.push(str7.split(" "));
+  document.querySelector(".out-7").innerHTML = a7_res;
+}
 
 document.querySelector(".b-7").onclick = t7;
 
 // Task 8 ============================================
 /*  Дан массив a8 = [1,2,66,77,15] - преобразуйте ее в строку. Разделитель - дефис. Результат присвойте a8_res. Запускаться решение должно при вызове функции t8. */
-
-function t8() {}
+const a8 = [1, 2, 66, 77, 15];
+function t8() {
+  a8_res = a8.join("-");
+  document.querySelector(".out-8").textContent = a8_res;
+}
 
 document.querySelector(".b-8").onclick = t8;
 
