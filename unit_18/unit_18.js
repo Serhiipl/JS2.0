@@ -57,7 +57,6 @@ document.querySelector(".b-3").onclick = t3;
 
 function t4() {
   let spansArr = document.querySelectorAll(".task-4");
-  let a4_res = [];
 
   spansArr.forEach((el) => a4_res.push(el.getAttribute("data")));
   document.querySelector(".out-4").innerHTML = a4_res;
@@ -87,17 +86,18 @@ document.querySelectorAll(".task-5").forEach((elem) => {
 /*  Дана строка str6='helloworld' - преобразуйте ее в массив (c разбиением по буквам) и присвойте a6_res. Выведите на страницу. Запускаться решение должно при вызове функции t6. */
 let str6 = "helloworld";
 function t6() {
-  a6_res.push(str6.split(""));
+  a6_res = [];
+  a6_res = str6.split("");
   document.querySelector(".out-6").innerHTML = a6_res;
 }
-
 document.querySelector(".b-6").onclick = t6;
 
 // Task 7 ============================================
 /*  Дана строка str7='hello world hi mazai' - преобразуйте ее в массив и разбейте по словам. Причем слова не должны содержать пробелов и присвойте a7_res. выведите на страницу.  Запускаться решение должно при вызове функции t7. */
 let str7 = "hello world hi mazai";
 function t7() {
-  a7_res.push(str7.split(" "));
+  a7_res = [];
+  a7_res = str7.split(" ");
   document.querySelector(".out-7").innerHTML = a7_res;
 }
 
@@ -137,9 +137,11 @@ document.querySelector(".b-9").onclick = t9;
 /*  Дан массив a10 = {name: ivan, age: 15, sex: 1, id: 45} - преобразуйте его в query строку ( так передаются GET параметры). Найдите описание что такое query строка самостоятельно. Разделитель - амперсанд. Результат присвойте a10_res. Запускаться решение должно при вызове функции t10. Допускается лишний амперсанд в конце строки!!! */
 let a10 = { name: "ivan", age: 15, sex: 1, id: 45 };
 function t10() {
-  a10_res = Object.entries(a10)
-    .map(([key, value]) => `?${key}=${value}`)
-    .join("&");
+  let arr = [];
+  for (let key in a10) {
+    arr.push(`${key}=${a10[key]}`);
+  }
+  a10_res = arr.join("&");
   document.querySelector(".out-10").innerHTML = a10_res;
 }
 

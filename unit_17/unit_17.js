@@ -287,9 +287,8 @@ let a15 = [
 ];
 
 function t15() {
-  return a15.filter(function (item) {
-    return item.pnum !== "" && item.pnum.length === 6;
-  });
+  a15_res = a15.filter((item) => item.pnum.length === 6 && item.pnum !== "");
+  return a15_res;
 }
 
 document.querySelector(".b-15").onclick = () => {
