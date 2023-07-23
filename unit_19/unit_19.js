@@ -60,69 +60,118 @@ block5.addEventListener("dblclick", t5);
 // Task 6 ============================================
 /*  Дан блок .div-6 и список .ul-6. При двойном клике на блоке скрывайте .ul-6 еcли он показан и показывайте если скрыт. Скрытие и показ делайте через добавление - удаление класса .hide */
 
-function t6() {}
-
+function t6() {
+  document.querySelector(".ul-6").classList.toggle("hide");
+}
+let div6 = document.querySelector(".div-6");
+div6.addEventListener("dblclick", t6);
 // ваше событие здесь!!!
 
 // Task 7 ============================================
 /*  Дан блок .div-7. При клике правой кнопкой мыши на блоке добавляйте ему класс .active. При повторном клике - удаляйте. */
 
-function t7() {}
-
+function t7(e) {
+  div7.classList.toggle("active");
+}
+const div7 = document.querySelector(".div-7");
+div7.addEventListener("contextmenu", t7);
 // ваше событие здесь!!!
 
 // Task 8 ============================================
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
 
-function t8() {}
+function t8(e) {
+  if (e.target.checked) {
+    document.addEventListener("contextmenu", preventFunc);
+  } else {
+    document.removeEventListener("contextmenu", preventFunc);
+  }
+}
+function preventFunc(e) {
+  e.preventDefault();
+}
+
+let chBox = document.querySelector(".ch-8");
+chBox.addEventListener("change", t8);
 
 // ваше событие здесь!!!
 
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
 
-function t9() {}
-
+function t9(e) {
+  e.preventDefault();
+  let image = document.querySelector(".div-9 img");
+  image.src = "img/2.png";
+}
+document.querySelector(".div-9").addEventListener("contextmenu", t9);
 // ваше событие здесь!!!
 
 // Task 10 ============================================
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
 
-function t10() {}
-
+function t10(e) {
+  let image = document.querySelector(".div-10 img");
+  image.src = "img/2.png";
+}
+document.querySelector(".div-10").addEventListener("mouseenter", t10);
 // ваше событие здесь!!!
 
 // Task 11 ============================================
 /*  Дан блок .div-11. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. При уведении мыши - mouseleave - возвращайте исходное изображение. */
 
-function t11() {}
-
+function t11(e) {
+  console.log(e);
+  let img = document.querySelector(".div-11 img");
+  if (e.type === "mouseenter") {
+    img.src = "img/2.png";
+  }
+  if (e.type === "mouseleave") {
+    img.src = "img/1.png";
+  }
+}
+let div11 = document.querySelector(".div-11");
+div11.addEventListener("mouseenter", t11);
+div11.addEventListener("mouseleave", t11);
 // ваше событие здесь!!!
 
 // Task 12 ============================================
 /*  Дан блок .div-12. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. */
-
+document.querySelector(".div-12").addEventListener("mousedown", () => {
+  document.querySelector(".div-12").classList.add("active");
+});
 // функцию пишите самостоятельно
 
 // ваше событие здесь!!!
 
 // Task 13 ============================================
 /*  Дан блок .div-13. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. Добавьте ему событие mouseup - при отпускании мыши - удаляйте класс active. */
-
+let div13 = document.querySelector(".div-13");
+div13.addEventListener("mousedown", () => div13.classList.add("active"));
+div13.addEventListener("mouseup", () => div13.classList.remove("active"));
 // функцию пишите самостоятельно
 // ваше событие здесь!!!
 
 // Task 14 ============================================
 /*  Дан блок .div-14. При нажатии кнопки b-14 добавляйте к нему событие onclick - которое, при клике добавляем блоку div-14 класс active. */
 
-function t14() {}
+function t14() {
+  let div14 = document.querySelector(".div-14");
+  div14.onclick = () => div14.classList.add("active");
+}
 document.querySelector(".b-14").onclick = t14;
 
 // Task 15 ============================================
 /*  Дан блок .div-15. Добавьте на него событие move. При каждом движении мыши увеличивайте число внутри на 1. */
+let div15 = document.querySelector(".div-15");
 
-function t15() {}
+function t15(e) {
+  let val = +div15.textContent;
+  val += 1;
+  div15.textContent = val;
+}
 // ваше событие здесь!!!
+div15.addEventListener("mousemove", t15);
 
 // Task 16 ============================================
 /*  Дан блок .div-16. Добавьте на него событие move. При каждом движении мыши увеличивайте ширину блока на 1px. */
