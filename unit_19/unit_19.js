@@ -165,9 +165,9 @@ document.querySelector(".b-14").onclick = t14;
 /*  Дан блок .div-15. Добавьте на него событие move. При каждом движении мыши увеличивайте число внутри на 1. */
 let div15 = document.querySelector(".div-15");
 
+let val = +div15.textContent;
 function t15(e) {
-  let val = +div15.textContent;
-  val += 1;
+  val++;
   div15.textContent = val;
 }
 // ваше событие здесь!!!
@@ -178,7 +178,7 @@ div15.addEventListener("mousemove", t15);
 let div16 = document.querySelector(".div-16");
 let startW = div16.offsetWidth;
 function t16(e) {
-  startW += 1;
+  startW++;
   div16.style.width = `${startW}px`;
 }
 // ваше событие здесь!!!
@@ -202,17 +202,27 @@ document.querySelector(".b-17_off").addEventListener("click", t17Off);
 // Task 18 ============================================
 /*  Дан блок div-18. Напишите фукнцию t18 которая выводит в данный блок его ширину при событии onmouseenter. */
 
-function t18() {}
+let block18 = document.querySelector(".div-18");
+function t18() {
+  block18.textContent = block18.offsetWidth;
+}
+block18.onmouseenter = t18;
 // ваше событие здесь!!!
 
 // Task 19 ============================================
 /*  Дан блок div-19. Напишите фукнцию t19 которая выводит в данный блок его классы при событии onmouseout. */
-
-function t19() {}
+let block19 = document.querySelector(".div-19");
+function t19() {
+  block19.textContent = block19.classList;
+}
 // ваше событие здесь!!!
-
+block19.onmouseout = t19;
 // Task 20 ============================================
 /*  Дан элемент progress. Напишите фукнцию t20 которая увеличивает его value на 1 при каждом событии mousemove внутри progress. */
 
-function t20() {}
+function t20() {
+  progresBar.value++;
+}
 // ваше событие здесь!!!
+let progresBar = document.querySelector("progress");
+progresBar.addEventListener("mousemove", t20);
