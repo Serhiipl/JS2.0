@@ -54,9 +54,13 @@ document.querySelector(".i-5").onkeydown = t5;
 
 // Task 6 ============================================
 /*  Дан input .i-6. Напишите функцию t6, которая позволяет вводить в i-6 только символы в нижнем регистре. Т.е. мы до функции создаем строку. Внутри функции проверяем код символа. Если символ - в нижнем регистре - добавляем в строку. Потом принудительно присваиваем строку в value input i-6. Чтобы блокировать стандартный вывод в input в конце функции пишем return false;  */
-
-function t6() {
-  // return false;
+let str = "";
+function t6(event) {
+  if (event.keyCode >= 97 && event.keyCode <= 122) {
+    str += event.key;
+  }
+  document.querySelector(".i-6").value = str;
+  return false;
 }
 
 document.querySelector(".i-6").onkeypress = t6;
@@ -66,7 +70,10 @@ document.querySelector(".i-6").onkeypress = t6;
 
 const a7 = ["a", "z", "x", "w", "y", "t"];
 
-function t7() {}
+function t7(e) {
+  let indexEl = Math.floor(Math.random() * (a7.length + 1));
+  document.querySelector(".out-7").textContent = a7[indexEl];
+}
 
 document.querySelector(".i-7").onkeydown = t7;
 
@@ -80,6 +87,17 @@ const a8 = {
 };
 
 function t8(event) {
+  let eKey = event.key;
+  let chKey = "";
+  let out = document.querySelector(".out-8");
+  if (a8.hasOwnProperty(eKey)) {
+    chKey = a8[eKey];
+  } else {
+    chKey = eKey;
+  }
+
+  out.textContent += chKey;
+
   // 1. Получаем из event введенный символ
   // 2. Проверяем наличие такого ключа в a8 - уже делали это раньше!!!!
   // 3. Если есть дописываем в out-8 символ из массива a8. Если нет - введенный символ.
