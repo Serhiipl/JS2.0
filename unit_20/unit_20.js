@@ -165,8 +165,6 @@ function t11(event) {
       }
     }
   }
-  console.log(event);
-  console.log(event.key);
 }
 
 document.querySelector(".i-11").onkeydown = t11;
