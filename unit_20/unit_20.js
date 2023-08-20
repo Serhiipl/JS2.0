@@ -142,13 +142,30 @@ document.querySelector(".i-10").onkeydown = t10;
 // Task 11 ============================================
 /*  Проект. 
 1. Изучите верстку клавиатуры.
-2. При вводе символа в i-11 ( латиница, нижний регистр) - клавише с таким символом присвойте класс .active. Это окрасит клавишу оранжевым фоном. Перед поиском и присвоением active, с помощью цикла удалите класс active у всех клавиш с классом keyboard.
+2. При вводе символа в i-11 ( латиница, нижний регистр) - клавише с таким символом присвойте класс .active. Это окрасит клавишу оранжевым фоном.
+ Перед поиском и присвоением active, с помощью цикла удалите класс active у всех клавиш с классом keyboard.
 3. Если все сделано верно, то при вводе следующего символа, предыдущая клавиша потеряет оранжевый фон, а новая введенная окрасится. 
 4. Самостоятельно добавьте все цифры и второй ряд клавиш от a до l
 5. Самостоятельно добавьте клавишу alt, enter.
 */
 
+let input = document.querySelector(".i-11");
+let keys = document.getElementsByClassName("keyboard");
+
 function t11(event) {
+  for (const key in keys) {
+    if (Object.hasOwnProperty.call(keys, key)) {
+      const element = keys[key];
+      if (element.classList.contains("active")) {
+        element.classList.remove("active");
+      }
+      // console.log(element.getAttribute("data"));
+      if (event.key == element.getAttribute("data")) {
+        element.classList.add("active");
+      }
+    }
+  }
+  console.log(event);
   console.log(event.key);
 }
 
