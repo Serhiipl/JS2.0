@@ -85,41 +85,69 @@ let btn5 = (document.querySelector(".b-5").onclick = t5);
 function t6(e) {
   document.querySelector(".out-6").textContent = "touchend";
 }
-block4.addEventListener("touchend", t6);
+block4.ontouchend = t6;
 // ваше событие здесь!!!
 
 // Task 7 ============================================
 /*  Дан блок div-7. Добавьте событие touch, при срабатывании которого окрашивайте блок в красный цвет. */
+let block7 = document.querySelector(".div-7");
 
-function t7() {}
+function t7(e) {
+  block7.style.backgroundColor = "red";
+}
+block7.addEventListener("touchstart", t7);
 
 // ваше событие здесь!!!
 
 // Task 8 ============================================
 /*  Дан блок div-8. Добавьте на него событие touch, которое при срабатывании окрашивает блок случаным цветом из массива a8=[red, green, blue, orange, pink, yellow] */
+let a8 = ["red", "green", "blue", "orange", "pink", "yellow"];
 
-function t8() {}
+let block8 = document.querySelector(".div-8");
+
+function t8(e) {
+  let colour = Math.floor(0 + Math.random() * (a8.length + 1));
+  block8.style.backgroundColor = a8[colour];
+}
+block8.addEventListener("touchstart", t8);
 
 // ваше событие здесь!!!
 
 // Task 9 ============================================
 /* Дан блок div-9. Добавьте событие ontouch. Выводите количество одновременных касаний в out-9. */
+let block9 = document.querySelector(".div-9");
 
-function t9() {}
+function t9(e) {
+  console.log(e);
+  document.querySelector(".out-9").textContent = e.targetTouches.length;
+}
+block9.addEventListener("touchstart", t9);
 
 // ваше событие здесь!!!
 
 // Task 10 ============================================
 /*  Дан блок div-10. Добавьте на него событие touchmove. При срабатывании события - увеличивайте его ширину на 1. */
-
-function t10() {}
+let w = 75;
+let block10 = document.querySelector(".div-10");
+function t10(e) {
+  w++;
+  block10.style.width = `${w}px`;
+}
+block10.addEventListener("touchmove", t10);
 
 // ваше событие здесь!!!
 
 // Task 11 ============================================
 /*  Дан блок div-11. Добавьте на него событие touch. При срабатывании выводите радиус события radiusX, radiusY. */
+let block11 = document.querySelector(".div-11");
 
-function t11() {}
+function t11(e) {
+  console.log(e);
+  document.querySelector(
+    ".out-11"
+  ).textContent = `radiusX:${e.targetTouches[0].radiusX}, radiusY:${e.targetTouches[0].radiusY}`;
+}
+block11.addEventListener("touchstart", t11);
 
 // ваше событие здесь!!!
 
@@ -134,6 +162,7 @@ function t11() {}
 */
 
 const images = document.querySelectorAll(".img-12-min");
+
 let count = 0; // переменная, которая указывает на номер активного изображения в images
 
 const next = document.querySelector(".next");
@@ -142,8 +171,54 @@ next.onclick = nextFunction;
 const prev = document.querySelector(".prev");
 prev.onclick = prevFunction;
 
-function nextFunction() {}
+const reset = document.querySelector(".reset");
+reset.onclick = resetFunction;
 
-function prevFunction() {}
+let imgMax = document.querySelector(".img-12-max");
 
+function nextFunction() {
+  for (let i = 0; i < images.length; i++) {
+    if (images[i].classList.contains("active-img")) {
+      images[i].classList.remove("active-img");
+      if (i === images.length - 1) {
+        images[0].classList.add("active-img");
+        count = 0;
+      } else {
+        images[i].nextElementSibling.classList.add("active-img");
+        count = i + 1;
+      }
+      break;
+    }
+  }
+  imgMax.src = images[count].src;
+  console.log(images[count].src);
+}
+
+function prevFunction() {
+  for (let i = images.length - 1; i >= 0; i--) {
+    if (images[i].classList.contains("active-img")) {
+      images[i].classList.remove("active-img");
+      if (i === 0) {
+        images[images.length - 1].classList.add("active-img");
+      } else {
+        images[i].previousElementSibling.classList.add("active-img");
+        count = i - 1;
+      }
+      break;
+    }
+  }
+  imgMax.src = images[count].src;
+}
+
+function resetFunction() {
+  for (let i = images.length - 1; i >= 0; i--) {
+    if (images[i].classList.contains("active-img")) {
+      images[i].classList.remove("active-img");
+      images[0].classList.add("active-img");
+      count = 0;
+      break;
+    }
+  }
+  imgMax.src = images[count].src;
+}
 // ваше событие здесь!!!
