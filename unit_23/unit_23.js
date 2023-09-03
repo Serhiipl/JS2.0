@@ -102,4 +102,4 @@ function t8() {
   console.log(pArr);
 }
 document.querySelector(".b-8").onclick = t8;
-// ваше событие здесь!!!
+// ваше событие здесь!!
